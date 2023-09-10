@@ -27,8 +27,6 @@
   overflow: hidden;
 }
 
-
-@media (min-width: 992px) {
   .main-section {
     position: absolute;
     left: 50%;
@@ -64,4 +62,3 @@
     bottom: 0px;
     transform: translate(35%, 0%);
   }
-}
