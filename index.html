@@ -47,11 +47,7 @@
         setInterval(function () {
           $.ajax(settings).done(function (resp) {
             var result = resp.response[0];
-            if (result.status.long == "Not Started") {
-              var time = "00:00";
-            } else {
               var time = result.status.long;
-            }
             if (result.scores.home == null) {
               var home = "00";
             } else {
