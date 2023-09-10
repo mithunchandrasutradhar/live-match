@@ -1,0 +1,67 @@
+@font-face {
+  font-family: "Display Dots Two Sans W90 Rg";
+  src: url("https://db.onlinewebfonts.com/t/f5d2ad5c994deab50d7da102fb185f1e.eot");
+  src: url("https://db.onlinewebfonts.com/t/f5d2ad5c994deab50d7da102fb185f1e.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/f5d2ad5c994deab50d7da102fb185f1e.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/f5d2ad5c994deab50d7da102fb185f1e.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/f5d2ad5c994deab50d7da102fb185f1e.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/f5d2ad5c994deab50d7da102fb185f1e.svg#Display Dots Two Sans W90 Rg")format("svg");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Display Dots Two Sans W90 Rg;
+}
+
+.main {
+  width: 1920px;
+  height: 1080px;
+  margin-right: auto;
+  margin-left: auto;
+  background-image: url('sa-vs-scotland.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: hidden;
+}
+
+
+@media (min-width: 992px) {
+  .main-section {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, -5%);
+  }
+
+  .time-section,
+  .home-score,
+  .away-score {
+    position: absolute;
+    font-size: 250px;
+    line-height: 1;
+    color: #eee;
+  }
+
+  .time-section {
+    left: 50%;
+    top: 35%;
+    transform: translate(-50%, -35%);
+    font-size: 175px;
+    text-align: center;
+  }
+
+  .home-score {
+    left: 15%;
+    bottom: 0px;
+    transform: translate(-35%, 0%);
+  }
+
+  .away-score {
+    right: 15%;
+    bottom: 0px;
+    transform: translate(35%, 0%);
+  }
+}

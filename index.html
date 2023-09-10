@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+  </style>
+
+  <title>South Africa VS Scotland Live Match - Rugby World Cup 2023</title>
+
+
+  <!-- Font Awesome CDN link-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="icon" href="favicon.png">
+  <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body>
+
+
+  <div class="main">
+    <div class="row d-flex align-items-center" style="min-height: 100vh;">
+      <section class="container">
+        <div class="time-section" id="time"></div>
+        <div class="home-score" id="home"></div>
+        <div class="away-score" id="away"></div>
+      </section>
+      <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+      <script>
+        var settings = {
+          "url": "https://v1.rugby.api-sports.io/games?id=16956",
+          "method": "GET",
+          "timeout": 0,
+          "headers": {
+            "x-rapidapi-host": "v1.rugby.api-sports.io",
+            "x-rapidapi-key": "4fd41596df6fc9eff48403448802af60"
+          },
+        };
+        setInterval(function () {
+          $.ajax(settings).done(function (resp) {
+            var result = resp.response[0];
+            if (result.status.long == "Not Started") {
+              var time = "00:00";
+            } else {
+              var time = result.status.long;
+            }
+            if (result.scores.home == null) {
+              var home = "00";
+            } else {
+              var home = result.scores.home;
+            }
+            if (result.scores.away == null) {
+              var away = "00";
+            } else {
+              var away = result.scores.away;
+            }
+            $('#time').html(time);
+            $('#home').html(home);
+            $('#away').html(away);
+          });
+        }, 10000);
+      </script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>
