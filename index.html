@@ -44,7 +44,7 @@
             "x-rapidapi-key": "4fd41596df6fc9eff48403448802af60"
           },
         };
-        //setInterval(function () {
+        setInterval(function () {
           $.ajax(settings).done(function (resp) {
             var result = resp.response[0];
               var time = result.status.long;
@@ -62,7 +62,7 @@
             $('#home').html(home);
             $('#away').html(away);
           });
-        //}, 10000);
+        }, 10000);
       </script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
